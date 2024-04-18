@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const testimonialsRoutes = require('./testimonials.routes');
 const concertsRoutes = require('./concerts.routes');
@@ -6,6 +7,7 @@ const seatsRoutes = require('./seats.routes');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 app.use('/api/testimonials', testimonialsRoutes);
 app.use('/api/concerts', concertsRoutes);
